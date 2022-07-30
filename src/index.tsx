@@ -1,6 +1,14 @@
-import {createRoot} from 'react-dom/client'
+import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { CssBaseline } from "@mui/material";
+import { App } from "./app/app";
 
-import { App } from './app'
-
-const root = createRoot(document.getElementById('root') as HTMLElement)
-root.render(<App />)
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+root.render(
+    <BrowserRouter>
+      <CssBaseline />
+      <App />
+    </BrowserRouter>
+);
