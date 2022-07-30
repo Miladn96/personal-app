@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Admin, Messages } from "../pages/admin";
 import { routes, RoutesModel } from "../routes";
 import "./style.scss";
 

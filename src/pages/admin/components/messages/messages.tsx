@@ -8,16 +8,17 @@ import {
 
 export const Messages = () => {
   const [messages, setMessages] = useState<RespMessageModel[]>([]);
-  useEffect(() => {
-    !(messages===[]) && getMessages()
-  }, []);
   const getMessages = () => {
     getMessagesService()
-    .pipe(map((res) => res.data))
-    .subscribe((messages) => {
-      setMessages(messages as RespMessageModel[]);
-    });
-  }
+      .pipe(map((res) => res.data))
+      .subscribe((messages) => {
+        setMessages(messages as RespMessageModel[]);
+      });
+  };
+  useEffect(() => {
+    !(messages === []) && getMessages();
+    // eslint-disable-next-line
+  }, []);
   return (
     <MessageContainer>
       {messages.map((message) => (
