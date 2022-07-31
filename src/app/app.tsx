@@ -28,6 +28,8 @@ export const App = () => {
   return (
     <>
       <Link to={'/home/about'}>About</Link>
+      <br/>
+      <Link to={'/admin/messages'}>Admin</Link>
       <Routes>{routeChildren(routes)}</Routes>
     </>
   );
