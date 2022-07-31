@@ -7,10 +7,10 @@ export const httpGet = (url: string): Observable<any> => {
   return new Observable((obs: Observer<any>) => {
     axios
       .get(rootUrl + url)
-      .then((res) => {
+      .then((res: any) => {
         obs.next(res.data);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         obs.error(err);
       });
   });
@@ -20,10 +20,10 @@ export const httpPost = (url: string, params: any): Observable<any> => {
   return new Observable((obs: Observer<any>) => {
     axios
       .post(rootUrl + url, params)
-      .then((res) => {
+      .then((res: any) => {
         obs.next(res.data);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         obs.error(err);
       });
   });
