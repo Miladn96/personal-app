@@ -1,12 +1,16 @@
 import axios from "axios";
 import { Observable, Observer } from "rxjs";
 
-const rootUrl = 'http://api.milad-nasiri.ir/api';
+const rootUrl = "http://api.milad-nasiri.ir/api";
 
 export const httpGet = (url: string): Observable<any> => {
   return new Observable((obs: Observer<any>) => {
     axios
-      .get(rootUrl + url)
+      .get(rootUrl + url, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res: any) => {
         obs.next(res.data);
       })
@@ -19,7 +23,11 @@ export const httpGet = (url: string): Observable<any> => {
 export const httpPost = (url: string, params: any): Observable<any> => {
   return new Observable((obs: Observer<any>) => {
     axios
-      .post(rootUrl + url, params)
+      .post(rootUrl + url, params, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res: any) => {
         obs.next(res.data);
       })
@@ -30,7 +38,7 @@ export const httpPost = (url: string, params: any): Observable<any> => {
 };
 
 export interface RespModel<T> {
-  data?: T,
-  message?: string,
-  error?: boolean
+  data?: T;
+  message?: string;
+  error?: boolean;
 }
