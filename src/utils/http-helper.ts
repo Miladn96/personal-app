@@ -8,7 +8,7 @@ export const httpGet = (url: string): Observable<any> => {
     axios
       .get(rootUrl + url, {
         headers: {
-          "Content-Type": "application/json",
+          "Accept": "application/json",
         },
       })
       .then((res: any) => {
@@ -25,7 +25,7 @@ export const httpPost = (url: string, params: any): Observable<any> => {
     axios
       .post(rootUrl + url, params, {
         headers: {
-          "Content-Type": "application/json",
+          "Accept": "application/json",
         },
       })
       .then((res: any) => {
