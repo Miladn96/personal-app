@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import { About } from "../pages";
 import { routes, RoutesModel } from "../routes";
 import "./style.scss";
 
@@ -25,11 +25,9 @@ export const App = () => {
       )}
     </>
   );
-  useEffect(()=>{
-    console.log('useEffect - App')
-  })
   return (
     <>
+      <Link to={'/home/about'}>About</Link>
       <Routes>{routeChildren(routes)}</Routes>
     </>
   );
