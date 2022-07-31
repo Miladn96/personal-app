@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Observable, Observer } from "rxjs";
 
-const rootUrl = "http://api.milad-nasiri.ir/api";
+const rootUrl = "https://api.milad-nasiri.ir/api";
 
 export const httpGet = (url: string): Observable<any> => {
   return new Observable((obs: Observer<any>) => {
