@@ -1,5 +1,4 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { About } from "../pages";
 import { routes, RoutesModel } from "../routes";
 import "./style.scss";
 
