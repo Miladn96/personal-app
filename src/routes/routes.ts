@@ -3,6 +3,10 @@ import { Admin, Messages } from "../pages/admin"
 
 export const routes: RoutesModel[] = [
   {
+    path: '/',
+    redirectTo: '/home/about'
+  },
+  {
     path: 'home/*',
     component: Home,
     children: [
@@ -26,6 +30,7 @@ export const routes: RoutesModel[] = [
 
 export interface RoutesModel {
   path: string,
-  component: any,
+  component?: any,
+  redirectTo?: string,
   children?: RoutesModel[]
 }
