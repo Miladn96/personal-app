@@ -29,6 +29,4 @@ jobs:
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
           dangerous-clean-slate: true
-          local-dir: |
-            "./build/"
-            "./htaccess/"
+          local-dir: ./build/
