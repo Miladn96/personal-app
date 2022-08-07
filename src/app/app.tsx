@@ -6,7 +6,6 @@ export const App = () => {
   const routeChildren = (_routes: RoutesModel[]) => (
     <>
       {_routes.map((route) => {
-        console.log(route)
         if (route.redirectTo)
           return (
             <Route key={route.path} path={route.path} element={<Navigate to={route.redirectTo} replace />} />
@@ -33,9 +32,11 @@ export const App = () => {
   );
   return (
     <>
+    <div className="btns">
       <Link to={"/home/about"}>About</Link>
       <br />
       <Link to={"/admin/messages"}>Admin</Link>
+    </div>
       <Routes>{routeChildren(routes)}</Routes>
     </>
   );
