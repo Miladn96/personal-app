@@ -16,9 +16,8 @@ export const About = () => {
       message,
       userUid: localStorage.getItem("userUid") || undefined,
     };
-    console.log(payload);
     newMessage(payload).subscribe((res) => {
-      console.log(res);
+      console.log(res.data?.message);
     });
   };
 

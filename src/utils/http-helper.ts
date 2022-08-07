@@ -1,7 +1,11 @@
 import axios from "axios";
 import { Observable, Observer } from "rxjs";
+import { APP_MODE, APP_MODES } from "./env";
 
-const rootUrl = "https://api.milad-nasiri.ir/api";
+const rootLocalUrl = "http://localhost:4000/api";
+const rootProdUrl = "https://api.milad-nasiri.ir/api";
+const rootUrl =
+  APP_MODE === APP_MODES.DEVELOPMENT ? rootLocalUrl : rootProdUrl;
 const options = {
   headers: {
     Accept: "application/json",

@@ -1,0 +1,17 @@
+.MuiPagination-root{
+  .MuiPagination-ul {
+    .Mui-selected {
+      border-radius: 3px;
+      background-color: #00000022;
+      &:hover{
+        background-color: #00000033;
+      }
+    }
+    .MuiPaginationItem-page {
+      color: #121212;
+      &:hover {
+        border-radius: 5px;
+      }
+    }
+  }
+}
